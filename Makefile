@@ -1,8 +1,8 @@
 BIN=stm32vldiscovery-linux-template
 
-TOOLS_PATH=/opt/sgpp-lite-arm-eabi-bin-2010.09.51
+TOOLS_PATH=/opt/gcc-arm-none-eabi-4_9-2015q3
 TOOLS_PREFIX=arm-none-eabi-
-TOOLS_VERSION=4.5.1
+TOOLS_VERSION=4.9.3
 
 CFLAGS=-c -mcpu=cortex-m3 -mthumb -Wall -O0 -mapcs-frame -D__thumb2__=1 
 CFLAGS+=-msoft-float -gdwarf-2 -mno-sched-prolog -fno-hosted -mtune=cortex-m3 
@@ -11,8 +11,8 @@ CFLAGS+=-I./cmsis -I./stm32_lib -I.
 ASFLAGS=-mcpu=cortex-m3 -I./cmsis -I./stm32_lib -gdwarf-2 -gdwarf-2
 LDFLAGS=-static -mcpu=cortex-m3 -mthumb -mthumb-interwork -Wl,--start-group 
 LDFLAGS+=-L$(TOOLS_PATH)/lib/gcc/arm-none-eabi/$(TOOLS_VERSION)/thumb2 
-LDFLAGS+=-L$(TOOLS_PATH)/arm-none-eabi/lib/thumb2 -lc -lg -lstdc++ -lsupc++ -lgcc -lm 
-LDFLAGS+=--section-start=.text=0x8000000
+LDFLAGS+=-L$(TOOLS_PATH)/arm-none-eabi/lib/thumb2 -nostdlib -lg -lstdc++ -lsupc++ -lgcc -lm 
+LDFLAGS+=-Ttext=0x8000000
 LDFLAGS+=-Wl,--end-group -Xlinker -Map -Xlinker $(BIN).map -Xlinker 
 LDFLAGS+=-T ./stm32_lib/device_support/gcc/stm32f100rb_flash.ld -o $(BIN).elf
 
