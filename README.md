@@ -14,3 +14,9 @@ editing and other dependencies:
 cross-compiler from Linaro company (https://launchpad.net/gcc-arm-embedded).
 * stlink utility - to load binary to the STM32VLDiscovery board.
 * make
+* sudo
+* Development files for SG utils (install ``libsgutils2-dev`` for Debian-based distributives or ``sg3-utils`` for Gentoo-based).
+
+To compile project - execute ``make`` in console. To flash project to the
+STM32 board - execute ``./flashing_stm32vldiscovery.sh`` and follow orders
+on the screen.
