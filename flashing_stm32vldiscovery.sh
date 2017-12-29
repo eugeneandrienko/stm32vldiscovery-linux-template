@@ -35,19 +35,23 @@ make -C ./stlink/build
 if [ "$?" -ne "0" ]; then
     echo "May be you do not installed libsgutils2 \
 development files?"
-    echo "For Ubuntu users: try 'sudo apt-get-install libsgutils2-dev'"
+    echo "For Ubuntu users: try 'sudo apt-get install libsgutils2-dev'"
     echo "For Gentoo users: try 'sudo emerge sg3-utils'"
     exit 1
 fi
 
 echo "*****************************************************************"
-echo "*  Starting GDB server...                                       *"
-echo "*  For connect to it - run GDB in another console and:          *"
-echo "*   (gdb) target remote :1234                                   *"
-echo "*  For load ELF to STM32VLDiscovery                             *"
-echo "*   (gdb) load $1                                               *"
-echo "* Note: please use arm-none-eabi-gdb unstead of x86 targeted    *"
-echo "* gdb!                                                          *"
+echo " Starting GDB server..."
+echo " For connect to it - run GDB in another console and:"
+echo "  (gdb) target remote :1234"
+echo " For load ELF to STM32VLDiscovery"
+echo "  (gdb) load $1"
+echo " For start loaded program"
+echo "  (gdb) continue"
+echo
+echo "Note: please use arm-none-eabi-gdb unstead of x86 targeted"
+echo "gdb!"
 echo "*****************************************************************"
 
 sudo ./stlink/build/st-util 1234 /dev/stlink
+
