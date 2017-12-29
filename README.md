@@ -12,7 +12,7 @@ Unlike other similar projects, there are:
 All what you need - is a blank console, emacs or vim for source code editing and other dependencies:
 
 * Cross-compiler (arm-none-eabi-gcc, the same gdb and etc). You shall use gcc-arm-none-eabi and gdb-arm-none-eabi packages if you are user of Debian-based distro.
-* stlink utility - to load binary to the STM32VLDiscovery board.
+* stlink utility (https://github.com/texane/stlink) - to load binary to the STM32VLDiscovery board.
 * make
 * sudo
 * Development files for SG utils (install ``libsgutils2-dev`` for Debian-based distributives or ``sg3-utils`` for Gentoo-based).
