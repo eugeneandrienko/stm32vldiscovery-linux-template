@@ -49,7 +49,7 @@ echo "  (gdb) load $1"
 echo " For start loaded program"
 echo "  (gdb) continue"
 echo
-echo "Note: please use arm-none-eabi-gdb unstead of x86 targeted"
+echo "Note: please use arm-none-eabi-gdb instead of x86 targeted"
 echo "gdb!"
 echo "*****************************************************************"
 
