@@ -1,3 +1,5 @@
+Repository moved to https://codeberg.org/evgandr/stm32vldiscovery-linux-template
+
 # STM32VLDiscovery for Linux
 
 There is a template STM32VLDiscovery project for Linux.
